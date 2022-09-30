@@ -1,8 +1,7 @@
-package com.example.backend.service;
+package de.neuefische.backend.service;
 
-import com.example.backend.model.Movie;
-import com.example.backend.model.MovieDTO;
-import com.example.backend.respository.MovieRepo;
+import de.neuefische.backend.model.Movie;
+import de.neuefische.backend.respository.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,13 +23,10 @@ public class MovieService {
         return repo.findAll();
     }
 
-    public Movie addMovie(MovieDTO movieDTO) {
-        Movie movie = Movie.builder()
-                .title(movieDTO.getTitle())
-                .id(idService.generateId())
-                .poster(movieDTO.getPoster())
-                .releaseYear(movieDTO.getReleaseYear())
-                .build();
+    public Movie addMovie(Movie movie) {
+        // Generate and set id for new movie
+        movie.setId(idService.generateId());
+
         return repo.add(movie);
     }
 }

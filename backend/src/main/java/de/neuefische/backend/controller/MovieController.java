@@ -1,8 +1,7 @@
-package com.example.backend.controller;
+package de.neuefische.backend.controller;
 
-import com.example.backend.model.Movie;
-import com.example.backend.model.MovieDTO;
-import com.example.backend.service.MovieService;
+import de.neuefische.backend.model.Movie;
+import de.neuefische.backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +24,8 @@ public class MovieController {
     }
 
     @PostMapping
-    public Movie addMovie(@RequestBody MovieDTO movieDTO){
-        return service.addMovie(movieDTO);
+    public Movie addMovie(@RequestBody Movie movie){
+        return service.addMovie(movie);
     }
 
 }
