@@ -39,13 +39,13 @@ class MovieServiceTest {
     void addMovie() {
         //GIVEN
         Movie dummyMovie = new Movie("1", "Matrix", "1999", "www.post.com/image1.jpeg");
-        when(repo.add(dummyMovie)).thenReturn(dummyMovie);
+        when(repo.save(dummyMovie)).thenReturn(dummyMovie);
 
         //WHEN
         Movie actual = service.addMovie(dummyMovie);
 
         //THEN
-        verify(repo).add(dummyMovie);
+        verify(repo).save(dummyMovie);
         assertEquals(dummyMovie, actual);
     }
 }
