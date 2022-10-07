@@ -16,7 +16,7 @@ class MovieServiceTest {
     private final IdService idService = mock(IdService.class);
     private final MovieService service = new MovieService(repo, idService);
 
-    @Test
+   /* @Test
     void getAllMovies() {
         //GIVEN
         when(repo.findAll())
@@ -47,5 +47,5 @@ class MovieServiceTest {
         //THEN
         verify(repo).save(dummyMovie);
         assertEquals(dummyMovie, actual);
-    }
+    }*/
 }
