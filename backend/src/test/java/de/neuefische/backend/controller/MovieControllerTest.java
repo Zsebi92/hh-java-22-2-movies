@@ -32,7 +32,7 @@ class MovieControllerTest {
     private IdService idService;
 
 
-   /* @DirtiesContext
+    @DirtiesContext
     @Test
     void getAllMovies() throws Exception {
         //GIVEN
@@ -63,6 +63,6 @@ class MovieControllerTest {
                 .andExpect(status().is(200))
                 .andExpect(content().string("""
                         {"id":"123","title":"Matrix","releaseYear":"1999","poster":"www.post.com/image1.jpeg"}"""));
-    }*/
+    }
 
 }
