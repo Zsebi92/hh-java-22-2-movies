@@ -27,6 +27,6 @@ public class MovieService {
         // Generate and set id for new movie
         movie.setId(idService.generateId());
 
-        return repo.add(movie);
+        return repo.save(movie);
     }
 }
