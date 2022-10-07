@@ -41,20 +41,20 @@ build-backend:
         name: backend-build
         path: backend/target/hh-java-22-2-movies.jar
 
-deploy:
-  runs-on: ubuntu-latest
-  needs: build-backend
-  env:
-    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/download-artifact@v2
-      with:
-        name: backend-build
-        path: backend/target
-    - name: Login to Heroku
-      run: heroku container:login
-    - name: Push App
-      run: heroku container:push web -a my-insane-movie-db
-    - name: Release App
-      run: heroku container:release web -a my-insane-movie-db
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-backend
+    env:
+     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v2
+        with:
+          name: backend-build
+          path: backend/target
+      - name: Login to Heroku
+        run: heroku container:login
+      - name: Push App
+        run: heroku container:push web -a my-insane-movie-db
+      - name: Release App
+        run: heroku container:release web -a my-insane-movie-db
