@@ -37,7 +37,7 @@ class MovieControllerTest {
     void getAllMovies() throws Exception {
         //GIVEN
         Movie dummyMovie = new Movie("1", "Matrix", "1999", "www.post.com/image1.jpeg");
-        repo.add(dummyMovie);
+        repo.save(dummyMovie);
 
         //WHEN &THEN
 
